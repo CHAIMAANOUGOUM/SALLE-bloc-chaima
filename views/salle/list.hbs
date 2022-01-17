@@ -1,0 +1,34 @@
+<div class="holder">
+<div class="title">
+    <h3>Salle List</h3>
+</div>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Libelle</th>
+            <th>Bloc</th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td><a class="btn btn-info" href="/occupation/qrgenerator/{{this._id}}">{{this.code}}</a></td>
+            <td>{{this.libelle}}</td>
+            <td>{{this.nameBloc}}</td>
+            
+
+            
+            <td>
+                <a href="/salle/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/salle/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>

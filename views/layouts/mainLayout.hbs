@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Bloc Crud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+
+    <div class='dashboard'>
+        <div class="dashboard-nav">
+            <header><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#"
+                    class="brand-logo"><span>School Management</span></a>
+            </header>
+            <nav class="dashboard-nav-list"><a href="#" class="dashboard-nav-item"><i class="fas fa-home"></i>
+                    Accueil </a>
+                <div class='dashboard-nav-dropdown'><a href="#!"
+                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-photo-video"></i>
+                        Bloc </a>
+                    <div class='dashboard-nav-dropdown-menu'><a href="/bloc" class="dashboard-nav-dropdown-item">New Bloc</a><a
+                            href="/bloc/list" class="dashboard-nav-dropdown-item">Consult</a></div>
+                </div>
+                <div class='dashboard-nav-dropdown'><a href="#!"
+                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Salles
+                    </a>
+                    <div class='dashboard-nav-dropdown-menu'><a href="/salle" class="dashboard-nav-dropdown-item">New Salle</a><a
+                            href="/salle/list" class="dashboard-nav-dropdown-item">Consult Salles</a>></div>
+                </div>
+                <div class='dashboard-nav-dropdown'><a href="#!"
+                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-money-check-alt"></i>
+                        Occupation </a>
+                    <div class='dashboard-nav-dropdown-menu'><a href="/occupation" class="dashboard-nav-dropdown-item">New Occupation</a><a
+                            href="occupation/list" class="dashboard-nav-dropdown-item">Consult Occupation</a>
+                         
+                    </div>
+                </div>
+                <div class='dashboard-nav-dropdown'><a href="#!"
+                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-money-check-alt"></i>
+                        Creneau </a>
+                    <div class='dashboard-nav-dropdown-menu'><a href="/creneau" class="dashboard-nav-dropdown-item">New Creneau</a><a
+                            href="/creneau/list" class="dashboard-nav-dropdown-item">Consult Creneau</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+         <div class="wrapper">
+                <nav class="navbar">
+
+                </nav>
+                <div class="row">
+
+                    {{{body}}}
+                    
+                </div>
+            </div>
+
+
+</body>
+<script>
+    const mobileScreen = window.matchMedia("(max-width: 990px )");
+    $(document).ready(function () {
+        $(".dashboard-nav-dropdown-toggle").click(function () {
+            $(this).closest(".dashboard-nav-dropdown")
+                .toggleClass("show")
+                .find(".dashboard-nav-dropdown")
+                .removeClass("show");
+            $(this).parent()
+                .siblings()
+                .removeClass("show");
+        });
+        $(".menu-toggle").click(function () {
+            if (mobileScreen.matches) {
+                $(".dashboard-nav").toggleClass("mobile-show");
+            } else {
+                $(".dashboard").toggleClass("dashboard-compact");
+            }
+        });
+    });
+</script>
+
+</html>

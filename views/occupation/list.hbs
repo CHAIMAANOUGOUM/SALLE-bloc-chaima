@@ -1,0 +1,38 @@
+<div class="holder">
+<div class="title">
+    <h3>Occupation List</h3>
+</div>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Creneau</th>
+            <th>Salle</th>
+            <th>date</th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.nameCreneau}}</td>
+            
+            <td>{{this.nameSalle}}
+                
+            </td>
+            <td>{{this.date}}</td>
+            
+
+            
+            <td>
+                <a href="/occupation/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/occupation/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+               
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>

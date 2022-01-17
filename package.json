@@ -1,0 +1,24 @@
+{
+    "name": "expressmach_mar",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@handlebars/allow-prototype-access": "^1.0.5",
+        "body-parser": "^1.19.1",
+        "ejs": "^3.1.6",
+        "express": "^4.17.2",
+        "express-handlebars": "^3.0.0",
+        "jsbarcode": "^3.11.5",
+        "mongoose": "^6.1.1",
+        "nodemon": "^2.0.15",
+        "qrcode": "^1.5.0",
+        "swagger-jsdoc": "^6.1.0",
+        "swagger-ui-express": "^4.3.0"
+    }
+}

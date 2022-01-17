@@ -1,0 +1,29 @@
+
+<div class="title">
+    <h3>{{viewTitle}}</h3>
+</div>
+<div id="form">
+
+<form action="/creneau" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{creneau._id}}">
+    <div class="form-group">
+        
+        <label>heure_debut</label>
+        <input type="time" class="form-control" name="heure_debut" placeholder="heure_debut " value="{{creneau.heure_debut}}">
+        <div class="text-danger">
+            {{creneau.heure_debutError}}</div>
+    </div>
+    <div class="form-group">
+        <label>heure_fin</label>
+        <input type="time" class="form-control" name="heure_fin" placeholder="heure_fin" value="{{creneau.heure_fin}}">
+        <div class="text-danger">
+            {{creneau.heure_finError}}</div>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+      
+        
+    </div>
+</form>
+</div>

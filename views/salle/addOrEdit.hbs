@@ -1,0 +1,35 @@
+<div class="title">
+    <h3>{{viewTitle}}</h3>
+</div>
+<div id="form">
+
+
+
+    <form action="/salle" method="POST" autocomplete="off" class="form">
+        <input type="hidden" name="_id" value="{{salle._id}}">
+        <div class="form-group">
+            <input type="text" class="form-control" name="code" placeholder="code " value="{{salle.code}}">
+            <div class="text-danger">
+                {{salle.codeError}}</div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="libelle" placeholder="libelle" value="{{salle.libelle}}">
+            <div class="text-danger">
+                {{salle.libelleError}}</div>
+        </div>
+        <div class="form-group">
+            <select class="form-control" id="bloc" name="bloc">
+                {{#each blocs}}
+                <option name={{this._id}} value={{this._id}}>{{this.code}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+           
+
+        </div>
+    </form>
+</div>

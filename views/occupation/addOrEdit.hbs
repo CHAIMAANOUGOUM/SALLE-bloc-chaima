@@ -1,0 +1,35 @@
+<div class="title">
+    <h3>{{viewTitle}}</h3>
+</div>
+<div id="form">
+
+
+    <form action="/occupation" method="POST" autocomplete="off" class="form">
+        <input type="hidden" name="_id" value="{{salle._id}}">
+        <div class="form-group">
+            <label for="salle">Salle : </label>
+            <select class="form-control" id="salle" name="salle">
+                {{#each salle}}
+                <option name={{this._id}} value={{this._id}}>{{this.code}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="creneau">Creneau : </label>
+            <select class="form-control" id="creneau" name="creneau">
+                {{#each creneau}}
+                <option name={{this._id}} value={{this._id}}>{{this.heure_debut}} - {{this.heure_fin}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+           
+
+        </div>
+    </form>
+</div>
